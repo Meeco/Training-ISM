@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Training-ISM/static/css/main.c109f6a8.css",
+    "main.js": "/Training-ISM/static/js/main.e84f3c58.js",
+    "index.html": "/Training-ISM/index.html",
+    "main.c109f6a8.css.map": "/Training-ISM/static/css/main.c109f6a8.css.map",
+    "main.e84f3c58.js.map": "/Training-ISM/static/js/main.e84f3c58.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c109f6a8.css",
+    "static/js/main.e84f3c58.js"
+  ]
+}
