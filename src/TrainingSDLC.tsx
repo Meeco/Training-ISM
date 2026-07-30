@@ -2850,7 +2850,7 @@ const Assessment: React.FC = () => {
 
 /* ---------- Root component ---------- */
 
-const SecurityTraining: React.FC = () => {
+const TrainingSDLC: React.FC = () => {
   const [view, setView] = useState<ViewId>("welcome");
   const [visited, setVisited] = useState<Record<string, boolean>>({
     welcome: true,
@@ -3128,4 +3128,4 @@ const SecurityTraining: React.FC = () => {
   );
 };
 
-export default SecurityTraining;
+export default TrainingSDLC;

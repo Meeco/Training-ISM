@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import AwarenessTraining from "./AwarenessTraining";
-import SecurityTraining from "./SecurityTraining";
+import TrainingAwareness from "./TrainingAwareness";
+import TrainingSDLC from "./TrainingSDLC";
 import "./App.css";
 
 type TrainingView = "home" | "awareness" | "security";
@@ -31,7 +31,7 @@ function App(): React.JSX.Element {
         <a className="training-home-link" href="#home">
           ← All training
         </a>
-        <AwarenessTraining />
+        <TrainingAwareness />
       </div>
     );
   }
@@ -42,7 +42,7 @@ function App(): React.JSX.Element {
         <a className="training-home-link" href="#home">
           ← All training
         </a>
-        <SecurityTraining />
+        <TrainingSDLC />
       </div>
     );
   }
