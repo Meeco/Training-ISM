@@ -60,20 +60,22 @@ interface LearnerInfo {
 }
 
 /* ---------- Theme ---------- */
+// Meeco brand palette, dark variant. Accent is Meeco red (#E51E3C); the danger
+// colour is shifted to a warm coral so it stays distinguishable from the accent.
 const C = {
-  bg: "#0d1117",
-  panel: "#161b22",
-  p2: "#1c2230",
-  bd: "#2a313c",
-  tx: "#e6edf3",
-  mut: "#8b949e",
-  ac: "#2dd4bf",
-  acbg: "rgba(45,212,191,0.12)",
-  dg: "#f85149",
-  dgbg: "rgba(248,81,73,0.10)",
-  ok: "#3fb950",
-  okbg: "rgba(63,185,80,0.10)",
-  am: "#d29922",
+  bg: "#141013",
+  panel: "#1e1a1c",
+  p2: "#282326",
+  bd: "#3a3436",
+  tx: "#f7f5f5",
+  mut: "#948b8d",
+  ac: "#e51e3c",
+  acbg: "rgba(229,30,60,0.14)",
+  dg: "#ff8a6b",
+  dgbg: "rgba(255,138,107,0.12)",
+  ok: "#4ed18a",
+  okbg: "rgba(78,209,138,0.12)",
+  am: "#e8b23a",
 };
 const MONO = "'IBM Plex Mono', monospace";
 
@@ -886,7 +888,7 @@ const PollWidget: React.FC<{ poll: Poll }> = ({ poll }) => {
                   top: 0,
                   bottom: 0,
                   width: `${o.p}%`,
-                  background: mine ? C.acbg : "rgba(139,148,158,0.12)",
+                  background: mine ? C.acbg : "rgba(148,139,141,0.14)",
                 }}
               />
               <div
@@ -970,7 +972,7 @@ const ScenarioWidget: React.FC<{ scenario: Scenario }> = ({ scenario }) => {
             padding: "14px 16px",
             fontSize: 13.5,
             lineHeight: 1.6,
-            color: "#cbd5e1",
+            color: "#d9d0d1",
           }}
         >
           {scenario.a}
@@ -1049,7 +1051,7 @@ const CheckWidget: React.FC<{ check: Check }> = ({ check }) => {
             marginTop: 12,
             fontSize: 13,
             lineHeight: 1.55,
-            color: sel === check.correct ? C.ok : "#cbd5e1",
+            color: sel === check.correct ? C.ok : "#d9d0d1",
           }}
         >
           <strong>{sel === check.correct ? "Correct. " : "Not quite. "}</strong>
@@ -1163,7 +1165,7 @@ const Welcome: React.FC<{ onStart: () => void }> = ({ onStart }) => (
           borderRadius: 6,
           padding: "12px 16px",
           fontSize: 13.5,
-          color: "#cbd5e1",
+          color: "#d9d0d1",
           lineHeight: 1.55,
         }}
       >
@@ -1246,14 +1248,14 @@ const Welcome: React.FC<{ onStart: () => void }> = ({ onStart }) => (
 const KeyMessage: React.FC<{
   label: string;
   children: React.ReactNode;
-  tone?: "teal" | "amber";
-}> = ({ label, children, tone = "teal" }) => {
+  tone?: "accent" | "amber";
+}> = ({ label, children, tone = "accent" }) => {
   const bg =
-    tone === "teal"
-      ? "linear-gradient(135deg,#16302d,#10231f)"
+    tone === "accent"
+      ? "linear-gradient(135deg,#3a121c,#220c11)"
       : "linear-gradient(135deg,#33240e,#241a0c)";
-  const border = tone === "teal" ? "#1f5048" : "#5a4419";
-  const color = tone === "teal" ? C.ac : C.am;
+  const border = tone === "accent" ? "#5e1826" : "#5a4419";
+  const color = tone === "accent" ? C.ac : C.am;
   return (
     <div
       style={{
@@ -1379,7 +1381,7 @@ const Module1: React.FC = () => (
           >
             CAUSED BY A DESIGN DECISION
           </div>
-          <div style={{ fontSize: 13.5, lineHeight: 1.55, color: "#cbd5e1" }}>
+          <div style={{ fontSize: 13.5, lineHeight: 1.55, color: "#d9d0d1" }}>
             An API returns a record by ID with no ownership check. Any user can
             enumerate IDs and read others' data (IDOR). The flaw is the
             access-control model, not a typo.
@@ -1396,7 +1398,7 @@ const Module1: React.FC = () => (
           >
             CAUSED BY AN IMPLEMENTATION DECISION
           </div>
-          <div style={{ fontSize: 13.5, lineHeight: 1.55, color: "#cbd5e1" }}>
+          <div style={{ fontSize: 13.5, lineHeight: 1.55, color: "#d9d0d1" }}>
             The design required server-side authZ, but one new endpoint shipped
             without the check copied in. Correct design, incorrect
             implementation.
@@ -1501,7 +1503,7 @@ const Module2: React.FC = () => (
               style={{
                 padding: "14px 16px",
                 borderRight: `1px solid ${C.bd}`,
-                background: "rgba(248,81,73,0.05)",
+                background: "rgba(255,138,107,0.06)",
               }}
             >
               <div
@@ -1531,7 +1533,7 @@ const Module2: React.FC = () => (
             <div
               style={{
                 padding: "14px 16px",
-                background: "rgba(63,185,80,0.05)",
+                background: "rgba(78,209,138,0.06)",
               }}
             >
               <div
@@ -1597,7 +1599,7 @@ const Module3: React.FC = () => (
       </div>
       <p
         style={{
-          color: "#cbd5e1",
+          color: "#d9d0d1",
           fontSize: 14,
           lineHeight: 1.6,
           margin: "0 0 12px",
@@ -1719,7 +1721,7 @@ const Module3: React.FC = () => (
             >
               {label}
             </span>
-            <span style={{ fontSize: 13.5, color: "#cbd5e1", lineHeight: 1.5 }}>
+            <span style={{ fontSize: 13.5, color: "#d9d0d1", lineHeight: 1.5 }}>
               {d}
             </span>
           </div>
@@ -1738,8 +1740,8 @@ const Module4: React.FC = () => (
   <div>
     <div
       style={{
-        background: "linear-gradient(135deg,#16302d,#10231f)",
-        border: "1px solid #1f5048",
+        background: "linear-gradient(135deg,#3a121c,#220c11)",
+        border: "1px solid #5e1826",
         borderRadius: 12,
         padding: "20px 24px",
         marginBottom: 24,
@@ -1785,8 +1787,8 @@ const Module4: React.FC = () => (
     >
       <div
         style={{
-          background: "rgba(63,185,80,0.06)",
-          border: "1px solid #1f5048",
+          background: "rgba(78,209,138,0.07)",
+          border: "1px solid #26543c",
           borderRadius: 10,
           padding: "16px 18px",
         }}
@@ -1805,7 +1807,7 @@ const Module4: React.FC = () => (
           style={{
             margin: 0,
             paddingLeft: 18,
-            color: "#cbd5e1",
+            color: "#d9d0d1",
             fontSize: 13,
             lineHeight: 1.7,
           }}
@@ -1817,8 +1819,8 @@ const Module4: React.FC = () => (
       </div>
       <div
         style={{
-          background: "rgba(248,81,73,0.06)",
-          border: "1px solid #5a2a2a",
+          background: "rgba(255,138,107,0.07)",
+          border: "1px solid #5e3229",
           borderRadius: 10,
           padding: "16px 18px",
         }}
@@ -1837,7 +1839,7 @@ const Module4: React.FC = () => (
           style={{
             margin: 0,
             paddingLeft: 18,
-            color: "#cbd5e1",
+            color: "#d9d0d1",
             fontSize: 13,
             lineHeight: 1.7,
           }}
@@ -1906,7 +1908,7 @@ const Module4: React.FC = () => (
         AI-generated code = same standards as human-written code
       </div>
       <p
-        style={{ color: "#cbd5e1", fontSize: 13.5, lineHeight: 1.6, margin: 0 }}
+        style={{ color: "#d9d0d1", fontSize: 13.5, lineHeight: 1.6, margin: 0 }}
       >
         Every AI suggestion gets <strong>human review</strong>,{" "}
         <strong>testing</strong>, and <strong>security review</strong>. You are
@@ -1933,7 +1935,7 @@ const Module4: React.FC = () => (
           gridTemplateColumns: "1fr 1fr",
           gap: 10,
           fontSize: 13,
-          color: "#cbd5e1",
+          color: "#d9d0d1",
           lineHeight: 1.5,
         }}
       >
@@ -1975,7 +1977,7 @@ const Module5: React.FC = () => (
       <div
         style={{
           fontSize: 14,
-          color: "#cbd5e1",
+          color: "#d9d0d1",
           lineHeight: 1.5,
           marginTop: 8,
           fontWeight: 400,
@@ -2049,7 +2051,7 @@ const Module5: React.FC = () => (
           style={{
             margin: 0,
             paddingLeft: 18,
-            color: "#cbd5e1",
+            color: "#d9d0d1",
             fontSize: 13.5,
             lineHeight: 1.7,
           }}
@@ -2074,7 +2076,7 @@ const Module5: React.FC = () => (
           style={{
             margin: 0,
             paddingLeft: 18,
-            color: "#cbd5e1",
+            color: "#d9d0d1",
             fontSize: 13.5,
             lineHeight: 1.7,
           }}
@@ -2112,7 +2114,7 @@ const Module5: React.FC = () => (
           gridTemplateColumns: "repeat(2,1fr)",
           gap: 10,
           fontSize: 13,
-          color: "#cbd5e1",
+          color: "#d9d0d1",
           lineHeight: 1.5,
         }}
       >
@@ -2250,7 +2252,7 @@ const QuestionCard: React.FC<{
               padding: "12px 14px",
               fontSize: 13,
               lineHeight: 1.55,
-              color: "#cbd5e1",
+              color: "#d9d0d1",
             }}
           >
             <div
@@ -2329,7 +2331,7 @@ const QuestionCard: React.FC<{
             marginTop: 10,
             fontSize: 12.5,
             lineHeight: 1.55,
-            color: "#cbd5e1",
+            color: "#d9d0d1",
             background: C.p2,
             borderRadius: 6,
             padding: "10px 12px",
@@ -2585,7 +2587,7 @@ const Assessment: React.FC = () => {
           gap: 24,
           alignItems: "center",
           background: C.panel,
-          border: `1px solid ${result.pass ? "#1f5048" : "#5a2a2a"}`,
+          border: `1px solid ${result.pass ? "#26543c" : "#5e3229"}`,
           borderRadius: 14,
           padding: "28px 30px",
           marginBottom: 24,
@@ -2808,7 +2810,7 @@ const Assessment: React.FC = () => {
             fontFamily: MONO,
             fontSize: 12.5,
             lineHeight: 1.6,
-            color: "#cbd5e1",
+            color: "#d9d0d1",
             whiteSpace: "pre-wrap",
             margin: 0,
             maxHeight: 320,
@@ -2905,7 +2907,7 @@ const TrainingSDLC: React.FC = () => {
         <div
           style={{
             padding: "24px 22px 18px",
-            borderBottom: "1px solid #1f262f",
+            borderBottom: "1px solid #282326",
           }}
         >
           <div
@@ -2987,7 +2989,7 @@ const TrainingSDLC: React.FC = () => {
             );
           })}
         </nav>
-        <div style={{ padding: "16px 22px", borderTop: "1px solid #1f262f" }}>
+        <div style={{ padding: "16px 22px", borderTop: "1px solid #282326" }}>
           <div
             style={{
               display: "flex",
@@ -3004,7 +3006,7 @@ const TrainingSDLC: React.FC = () => {
           <div
             style={{
               height: 5,
-              background: "#1f262f",
+              background: "#282326",
               borderRadius: 4,
               overflow: "hidden",
             }}
@@ -3083,7 +3085,7 @@ const TrainingSDLC: React.FC = () => {
                 justifyContent: "space-between",
                 marginTop: 40,
                 paddingTop: 24,
-                borderTop: "1px solid #1f262f",
+                borderTop: "1px solid #282326",
               }}
             >
               <button

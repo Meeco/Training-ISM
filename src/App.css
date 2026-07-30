@@ -4,21 +4,28 @@
   place-items: center;
   padding: 40px 24px;
   box-sizing: border-box;
-  color: #f8fafc;
+  color: #1a1a1a;
   background:
-    radial-gradient(circle at 15% 15%, rgba(45, 212, 191, 0.16), transparent 32%),
-    radial-gradient(circle at 85% 80%, rgba(59, 130, 246, 0.13), transparent 34%),
-    #0b1120;
+    radial-gradient(circle at 15% 15%, rgba(229, 30, 60, 0.07), transparent 34%),
+    radial-gradient(circle at 85% 80%, rgba(229, 30, 60, 0.05), transparent 36%),
+    #f7f5f5;
 }
 
 .training-selector {
   width: min(860px, 100%);
 }
 
+.training-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+  margin-bottom: 26px;
+}
+
 .training-eyebrow {
   margin: 0 0 14px;
-  color: #5eead4;
-  font: 700 12px/1.4 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: #e51e3c;
+  font: 600 12px/1.4 'IBM Plex Mono', monospace;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -26,6 +33,7 @@
 .training-selector h1 {
   max-width: 680px;
   margin: 0;
+  color: #1a1a1a;
   font-size: clamp(38px, 7vw, 68px);
   line-height: 1.02;
   letter-spacing: -0.045em;
@@ -33,7 +41,7 @@
 
 .training-intro {
   margin: 22px 0 40px;
-  color: #94a3b8;
+  color: #5b5458;
   font-size: 18px;
   line-height: 1.6;
 }
@@ -52,8 +60,8 @@
   color: inherit;
   text-align: left;
   text-decoration: none;
-  background: rgba(15, 23, 42, 0.82);
-  border: 1px solid #263449;
+  background: #ffffff;
+  border: 1px solid #e8dfe0;
   border-radius: 14px;
   transition:
     border-color 160ms ease,
@@ -63,15 +71,16 @@
 
 .training-card:hover,
 .training-card:focus-visible {
-  background: #111c30;
-  border-color: #5eead4;
+  background: #fbf7f7;
+  border-color: #e51e3c;
   outline: none;
   transform: translateY(-2px);
 }
 
 .training-card-number {
-  color: #5eead4;
-  font: 700 12px/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: #e51e3c;
+  font: 600 12px/1 'IBM Plex Mono', monospace;
+  letter-spacing: 0.08em;
 }
 
 .training-card-content {
@@ -80,17 +89,18 @@
 }
 
 .training-card-content strong {
+  color: #1a1a1a;
   font-size: 20px;
 }
 
 .training-card-content > span {
-  color: #94a3b8;
+  color: #5b5458;
   font-size: 14px;
   line-height: 1.5;
 }
 
 .training-card-arrow {
-  color: #5eead4;
+  color: #e51e3c;
   font-size: 24px;
   transition: transform 160ms ease;
 }
@@ -110,18 +120,19 @@
   top: 16px;
   right: 20px;
   padding: 9px 13px;
-  color: #f8fafc;
-  font: 600 12px/1.2 system-ui, sans-serif;
+  color: #1a1a1a;
+  font: 600 12px/1.2 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-decoration: none;
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #e3dadb;
   border-radius: 8px;
   backdrop-filter: blur(10px);
 }
 
 .training-home-link:hover,
 .training-home-link:focus-visible {
-  border-color: #5eead4;
+  color: #b0122b;
+  border-color: #e51e3c;
   outline: none;
 }
 

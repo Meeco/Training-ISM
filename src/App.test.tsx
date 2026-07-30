@@ -9,5 +9,5 @@ test('renders links to both training programs', () => {
   ).toHaveAttribute('href', '#awareness');
   expect(
     screen.getByRole('link', { name: /software development security/i })
-  ).toHaveAttribute('href', '#security');
+  ).toHaveAttribute('href', '#sdlc');
 });
