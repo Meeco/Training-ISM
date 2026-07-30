@@ -2410,7 +2410,7 @@ const Assessment: React.FC = () => {
         .join("\n") || "  None";
     const date = new Date().toISOString().slice(0, 10);
     return [
-      "To: isms@company-example.com",
+      "To: security@meeco.me",
       "Subject: Technical Security Awareness Training Results",
       "",
       `Employee Name: ${info.name || "________"}`,
@@ -2427,7 +2427,7 @@ const Assessment: React.FC = () => {
       "",
       "Training Completion Status: Completed",
       "",
-      "Recipient: isms@company-example.com",
+      "Recipient: security@meeco.me",
     ].join("\n");
   }
 
@@ -2441,7 +2441,7 @@ const Assessment: React.FC = () => {
     const lines = emailText().split("\n");
     const subj = "Technical Security Awareness Training Results";
     const body = lines.slice(3).join("\n");
-    window.location.href = `mailto:isms@company-example.com?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:security@meeco.me?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
   }
   function download() {
     const blob = new Blob([emailText()], { type: "text/plain" });
@@ -2841,7 +2841,7 @@ const Assessment: React.FC = () => {
             To automate collection, replace the mail step with a POST to a form
             endpoint (e.g. an internal LMS, Microsoft Forms, or a serverless
             webhook) capturing: full name, email, department, completion date,
-            score, and pass/fail. Route submissions to isms@company-example.com
+            score, and pass/fail. Route submissions to security@meeco.me
             or an ISMS dashboard. Retain records as ISO 27001 training evidence.
           </div>
         </div>
