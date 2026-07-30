@@ -794,9 +794,10 @@ const NAV: NavItem[] = [
 
 /* ---------- Small presentational components ---------- */
 
-const Card: React.FC<
-  React.PropsWithChildren<{ style?: React.CSSProperties }>
-> = ({ style, children }) => (
+const Card: React.FC<React.PropsWithChildren<{ style?: React.CSSProperties }>> = ({
+  style,
+  children,
+}) => (
   <div
     style={{
       background: C.panel,
@@ -842,9 +843,7 @@ const PollWidget: React.FC<{ poll: Poll }> = ({ poll }) => {
       >
         ◉ AUDIENCE POLL
       </div>
-      <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 14 }}>
-        {poll.q}
-      </div>
+      <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 14 }}>{poll.q}</div>
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         {poll.opts.map((o, i) => {
           const mine = sel === i;
@@ -901,9 +900,7 @@ const PollWidget: React.FC<{ poll: Poll }> = ({ poll }) => {
               >
                 <span>
                   {o.l}
-                  {mine && (
-                    <span style={{ color: C.ac, marginLeft: 8 }}>✓ you</span>
-                  )}
+                  {mine && <span style={{ color: C.ac, marginLeft: 8 }}>✓ you</span>}
                 </span>
                 <span style={{ fontFamily: MONO, color: C.mut }}>{o.p}%</span>
               </div>
@@ -913,8 +910,7 @@ const PollWidget: React.FC<{ poll: Poll }> = ({ poll }) => {
       </div>
       {answered && (
         <div style={{ fontSize: 12, color: C.mut, marginTop: 12 }}>
-          Anonymous poll — no single right answer. Compare your instinct with
-          the room and discuss.
+          Anonymous poll — no single right answer. Compare your instinct with the room and discuss.
         </div>
       )}
     </Card>
@@ -998,9 +994,7 @@ const CheckWidget: React.FC<{ check: Check }> = ({ check }) => {
       >
         ✓ KNOWLEDGE CHECK
       </div>
-      <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 14 }}>
-        {check.q}
-      </div>
+      <div style={{ fontWeight: 600, fontSize: 15, marginBottom: 14 }}>{check.q}</div>
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         {check.opts.map((o, i) => {
           const isC = i === check.correct,
@@ -1141,9 +1135,7 @@ const Welcome: React.FC<{ onStart: () => void }> = ({ onStart }) => (
         marginBottom: 24,
       }}
     >
-      <h3 style={{ margin: "0 0 14px", fontSize: 17 }}>
-        What this training covers
-      </h3>
+      <h3 style={{ margin: "0 0 14px", fontSize: 17 }}>What this training covers</h3>
       <p
         style={{
           color: C.mut,
@@ -1152,11 +1144,10 @@ const Welcome: React.FC<{ onStart: () => void }> = ({ onStart }) => (
           margin: "0 0 16px",
         }}
       >
-        This is engineering-specific training required as part of our ISO 27001
-        compliance. A key focus of this session is the rollout of enterprise AI
-        tooling. More specifically, the security decisions you make in your
-        daily work, including (but not limited to) designing, coding, handling
-        data, using AI, and reporting incidents.
+        This is engineering-specific training required as part of our ISO 27001 compliance. A key
+        focus of this session is the rollout of enterprise AI tooling. More specifically, the
+        security decisions you make in your daily work, including (but not limited to) designing,
+        coding, handling data, using AI, and reporting incidents.
       </p>
       <div
         style={{
@@ -1169,9 +1160,8 @@ const Welcome: React.FC<{ onStart: () => void }> = ({ onStart }) => (
           lineHeight: 1.55,
         }}
       >
-        This does not replace general cyber-awareness training (phishing,
-        passwords, social engineering, malware) - you will receive training on
-        this separately.
+        This does not replace general cyber-awareness training (phishing, passwords, social
+        engineering, malware) - you will receive training on this separately.
       </div>
     </div>
     <h3
@@ -1219,9 +1209,7 @@ const Welcome: React.FC<{ onStart: () => void }> = ({ onStart }) => (
           </div>
           <div style={{ flex: 1 }}>
             <div style={{ fontWeight: 600, fontSize: 14.5 }}>{o.title}</div>
-            <div style={{ color: C.mut, fontSize: 13, marginTop: 2 }}>
-              {o.desc}
-            </div>
+            <div style={{ color: C.mut, fontSize: 13, marginTop: 2 }}>{o.desc}</div>
           </div>
         </div>
       ))}
@@ -1278,9 +1266,7 @@ const KeyMessage: React.FC<{
       >
         {label}
       </div>
-      <div style={{ fontSize: 19, fontWeight: 600, lineHeight: 1.4 }}>
-        {children}
-      </div>
+      <div style={{ fontSize: 19, fontWeight: 600, lineHeight: 1.4 }}>{children}</div>
     </div>
   );
 };
@@ -1343,9 +1329,7 @@ const Module1: React.FC = () => (
           >
             {t}
           </div>
-          <div style={{ color: C.mut, fontSize: 13.5, lineHeight: 1.55 }}>
-            {d}
-          </div>
+          <div style={{ color: C.mut, fontSize: 13.5, lineHeight: 1.55 }}>{d}</div>
         </div>
       ))}
     </div>
@@ -1382,9 +1366,8 @@ const Module1: React.FC = () => (
             CAUSED BY A DESIGN DECISION
           </div>
           <div style={{ fontSize: 13.5, lineHeight: 1.55, color: "#d9d0d1" }}>
-            An API returns a record by ID with no ownership check. Any user can
-            enumerate IDs and read others' data (IDOR). The flaw is the
-            access-control model, not a typo.
+            An API returns a record by ID with no ownership check. Any user can enumerate IDs and
+            read others' data (IDOR). The flaw is the access-control model, not a typo.
           </div>
         </div>
         <div style={{ background: C.p2, borderRadius: 8, padding: 16 }}>
@@ -1399,16 +1382,15 @@ const Module1: React.FC = () => (
             CAUSED BY AN IMPLEMENTATION DECISION
           </div>
           <div style={{ fontSize: 13.5, lineHeight: 1.55, color: "#d9d0d1" }}>
-            The design required server-side authZ, but one new endpoint shipped
-            without the check copied in. Correct design, incorrect
-            implementation.
+            The design required server-side authZ, but one new endpoint shipped without the check
+            copied in. Correct design, incorrect implementation.
           </div>
         </div>
       </div>
     </div>
     <Callout>
-      before coding a feature, spend two minutes asking "who could misuse this,
-      and what data could leak?" That habit prevents most design-level flaws.
+      before coding a feature, spend two minutes asking "who could misuse this, and what data could
+      leak?" That habit prevents most design-level flaws.
     </Callout>
   </div>
 );
@@ -1448,9 +1430,7 @@ const Module2: React.FC = () => (
             fontSize: 13.5,
           }}
         >
-          <span style={{ fontFamily: MONO, color: C.ac, fontSize: 12 }}>
-            {o.id}
-          </span>
+          <span style={{ fontFamily: MONO, color: C.ac, fontSize: 12 }}>{o.id}</span>
           <span>{o.name}</span>
         </div>
       ))}
@@ -1494,9 +1474,7 @@ const Module2: React.FC = () => (
             }}
           >
             <span style={{ fontWeight: 600, fontSize: 14 }}>{s.title}</span>
-            <span style={{ fontFamily: MONO, fontSize: 11, color: C.mut }}>
-              {s.tag}
-            </span>
+            <span style={{ fontFamily: MONO, fontSize: 11, color: C.mut }}>{s.tag}</span>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
             <div
@@ -1576,9 +1554,8 @@ const Module2: React.FC = () => (
       ))}
     </div>
     <Callout>
-      validate input on the server with an allowlist, parameterise every query,
-      set cookie flags, and never return raw stack traces to users. These few
-      habits close most OWASP categories.
+      validate input on the server with an allowlist, parameterise every query, set cookie flags,
+      and never return raw stack traces to users. These few habits close most OWASP categories.
     </Callout>
   </div>
 );
@@ -1605,17 +1582,15 @@ const Module3: React.FC = () => (
           margin: "0 0 12px",
         }}
       >
-        Any information about an identified individual, or one who is reasonably
-        identifiable — names, emails, IPs, device IDs, location, and
-        combinations that re-identify someone. Meeco is Australian-based and
-        processes personal information of customers, users, employees and
+        Any information about an identified individual, or one who is reasonably identifiable —
+        names, emails, IPs, device IDs, location, and combinations that re-identify someone. Meeco
+        is Australian-based and processes personal information of customers, users, employees and
         partners globally.
       </p>
       <p style={{ color: C.mut, fontSize: 13, lineHeight: 1.55, margin: 0 }}>
-        The <strong>Australian Privacy Principles (APPs)</strong>, regulated by
-        the OAIC (oaic.gov.au), govern how we collect, use, store and disclose
-        it. Build to <strong>Privacy by Design</strong>: privacy as a default,
-        not an afterthought.
+        The <strong>Australian Privacy Principles (APPs)</strong>, regulated by the OAIC
+        (oaic.gov.au), govern how we collect, use, store and disclose it. Build to{" "}
+        <strong>Privacy by Design</strong>: privacy as a default, not an afterthought.
       </p>
     </div>
     <div
@@ -1631,10 +1606,7 @@ const Module3: React.FC = () => (
           "Data minimisation",
           'Collect and keep only what the purpose needs. Don\'t store a field "just in case".',
         ],
-        [
-          "Purpose limitation",
-          "Use data only for what it was collected for. New use = new basis.",
-        ],
+        ["Purpose limitation", "Use data only for what it was collected for. New use = new basis."],
         [
           "Data retention",
           "Delete when no longer needed. Set TTLs; don't hoard logs and exports forever.",
@@ -1721,17 +1693,14 @@ const Module3: React.FC = () => (
             >
               {label}
             </span>
-            <span style={{ fontSize: 13.5, color: "#d9d0d1", lineHeight: 1.5 }}>
-              {d}
-            </span>
+            <span style={{ fontSize: 13.5, color: "#d9d0d1", lineHeight: 1.5 }}>{d}</span>
           </div>
         ))}
       </div>
     </div>
     <Callout>
-      treat personal data as radioactive — minimise it, mask it in non-prod,
-      keep it out of logs, and know where it flows. See oaic.gov.au for the
-      APPs.
+      treat personal data as radioactive — minimise it, mask it in non-prod, keep it out of logs,
+      and know where it flows. See oaic.gov.au for the APPs.
     </Callout>
   </div>
 );
@@ -1760,10 +1729,9 @@ const Module4: React.FC = () => (
         Acceptable Use
       </div>
       <div style={{ fontSize: 15.5, lineHeight: 1.5, color: C.tx }}>
-        Use <strong>approved AI systems only</strong>. Never paste customer
-        data, internal/confidential information, secrets, or proprietary source
-        code into unapproved or public AI tools. When unsure of a tool's
-        classification, ask before you paste.
+        Use <strong>approved AI systems only</strong>. Never paste customer data,
+        internal/confidential information, secrets, or proprietary source code into unapproved or
+        public AI tools. When unsure of a tool's classification, ask before you paste.
       </div>
     </div>
     <h3
@@ -1889,9 +1857,7 @@ const Module4: React.FC = () => (
           >
             {r.name}
           </div>
-          <div style={{ color: C.mut, fontSize: 12.5, lineHeight: 1.5 }}>
-            {r.desc}
-          </div>
+          <div style={{ color: C.mut, fontSize: 12.5, lineHeight: 1.5 }}>{r.desc}</div>
         </div>
       ))}
     </div>
@@ -1907,14 +1873,11 @@ const Module4: React.FC = () => (
       <div style={{ color: C.ac, fontWeight: 600, marginBottom: 8 }}>
         AI-generated code = same standards as human-written code
       </div>
-      <p
-        style={{ color: "#d9d0d1", fontSize: 13.5, lineHeight: 1.6, margin: 0 }}
-      >
-        Every AI suggestion gets <strong>human review</strong>,{" "}
-        <strong>testing</strong>, and <strong>security review</strong>. You are
-        accountable for code you commit. Watch for hallucinated APIs, made-up
-        package names (slopsquatting), insecure defaults, and licence/copyright
-        issues from generated code.
+      <p style={{ color: "#d9d0d1", fontSize: 13.5, lineHeight: 1.6, margin: 0 }}>
+        Every AI suggestion gets <strong>human review</strong>, <strong>testing</strong>, and{" "}
+        <strong>security review</strong>. You are accountable for code you commit. Watch for
+        hallucinated APIs, made-up package names (slopsquatting), insecure defaults, and
+        licence/copyright issues from generated code.
       </p>
     </div>
     <div
@@ -1946,26 +1909,22 @@ const Module4: React.FC = () => (
           • <strong>RAG security</strong>: trust boundaries on retrieved content
         </div>
         <div>
-          • <strong>Prompt injection</strong>: treat model output as untrusted
-          input
+          • <strong>Prompt injection</strong>: treat model output as untrusted input
         </div>
         <div>
-          • <strong>Data access controls</strong>: the model inherits user
-          permissions, not god-mode
+          • <strong>Data access controls</strong>: the model inherits user permissions, not god-mode
         </div>
         <div>
-          • <strong>Model security</strong>: guard against poisoning, abuse and
-          leakage
+          • <strong>Model security</strong>: guard against poisoning, abuse and leakage
         </div>
         <div>
-          • <strong>Untrusted outputs</strong>: never execute model output
-          without validation
+          • <strong>Untrusted outputs</strong>: never execute model output without validation
         </div>
       </div>
     </div>
     <Callout>
-      approved tools only, no sensitive data in prompts, and review AI code as
-      if a stranger wrote it. ACSC AI guidance: cyber.gov.au.
+      approved tools only, no sensitive data in prompts, and review AI code as if a stranger wrote
+      it. ACSC AI guidance: cyber.gov.au.
     </Callout>
   </div>
 );
@@ -1983,9 +1942,9 @@ const Module5: React.FC = () => (
           fontWeight: 400,
         }}
       >
-        You are <strong>not</strong> expected to investigate incidents yourself
-        — you are expected to report them promptly. A false alarm costs minutes;
-        a delayed real incident costs far more.
+        You are <strong>not</strong> expected to investigate incidents yourself — you are expected
+        to report them promptly. A false alarm costs minutes; a delayed real incident costs far
+        more.
       </div>
     </KeyMessage>
     <div
@@ -2029,9 +1988,7 @@ const Module5: React.FC = () => (
           >
             {t}
           </div>
-          <div style={{ color: C.mut, fontSize: 12.5, lineHeight: 1.5 }}>
-            {d}
-          </div>
+          <div style={{ color: C.mut, fontSize: 12.5, lineHeight: 1.5 }}>{d}</div>
         </div>
       ))}
     </div>
@@ -2063,15 +2020,11 @@ const Module5: React.FC = () => (
           <li>Tell your Tech Lead / Engineering Manager</li>
           <li>Tag @channel to ensure the security officers are notified.</li>
           <li>Don't broadcast details in public channels</li>
-          <li>
-            Always review the Security Event Reporting Procedure in Confluence.
-          </li>
+          <li>Always review the Security Event Reporting Procedure in Confluence.</li>
         </ol>
       </Card>
       <Card>
-        <div style={{ color: C.ac, fontWeight: 600, marginBottom: 10 }}>
-          Preserve evidence
-        </div>
+        <div style={{ color: C.ac, fontWeight: 600, marginBottom: 10 }}>Preserve evidence</div>
         <ul
           style={{
             margin: 0,
@@ -2126,18 +2079,15 @@ const Module5: React.FC = () => (
           "A suspicious or unexpected third-party package",
           "A privacy data breach (see OAIC data breach response)",
         ].map((e) => (
-          <div
-            key={e}
-            style={{ background: C.p2, borderRadius: 7, padding: "11px 14px" }}
-          >
+          <div key={e} style={{ background: C.p2, borderRadius: 7, padding: "11px 14px" }}>
             {e}
           </div>
         ))}
       </div>
     </div>
     <Callout>
-      if something feels wrong, report it. When in doubt, report — that single
-      habit is the most valuable thing in this module.
+      if something feels wrong, report it. When in doubt, report — that single habit is the most
+      valuable thing in this module.
     </Callout>
   </div>
 );
@@ -2166,11 +2116,7 @@ const QuestionCard: React.FC<{
         marginBottom: 10,
       }}
     >
-      <span
-        style={{ fontFamily: MONO, color: C.ac, fontSize: 14, fontWeight: 600 }}
-      >
-        Q{num}
-      </span>
+      <span style={{ fontFamily: MONO, color: C.ac, fontSize: 14, fontWeight: 600 }}>Q{num}</span>
       <span
         style={{
           fontFamily: MONO,
@@ -2192,11 +2138,7 @@ const QuestionCard: React.FC<{
           marginLeft: "auto",
         }}
       >
-        {q.type === "mcq"
-          ? "MULTIPLE CHOICE"
-          : q.type === "scenario"
-            ? "SCENARIO"
-            : "SHORT ANSWER"}
+        {q.type === "mcq" ? "MULTIPLE CHOICE" : q.type === "scenario" ? "SCENARIO" : "SHORT ANSWER"}
       </span>
     </div>
   );
@@ -2204,12 +2146,8 @@ const QuestionCard: React.FC<{
     return (
       <Card>
         {header}
-        <div style={{ fontSize: 14.5, lineHeight: 1.5, marginBottom: 6 }}>
-          {q.q}
-        </div>
-        <div style={{ fontSize: 11.5, color: C.mut, marginBottom: 10 }}>
-          Objective: {q.lo}
-        </div>
+        <div style={{ fontSize: 14.5, lineHeight: 1.5, marginBottom: 6 }}>{q.q}</div>
+        <div style={{ fontSize: 11.5, color: C.mut, marginBottom: 10 }}>Objective: {q.lo}</div>
         <textarea
           rows={3}
           placeholder="Type your answer…"
@@ -2275,12 +2213,8 @@ const QuestionCard: React.FC<{
   return (
     <Card>
       {header}
-      <div style={{ fontSize: 14.5, lineHeight: 1.5, marginBottom: 6 }}>
-        {q.q}
-      </div>
-      <div style={{ fontSize: 11.5, color: C.mut, marginBottom: 12 }}>
-        Objective: {q.lo}
-      </div>
+      <div style={{ fontSize: 14.5, lineHeight: 1.5, marginBottom: 6 }}>{q.q}</div>
+      <div style={{ fontSize: 11.5, color: C.mut, marginBottom: 12 }}>Objective: {q.lo}</div>
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         {q.opts.map((o, i) => {
           const mine = answer === i,
@@ -2405,9 +2339,8 @@ const Assessment: React.FC = () => {
 
   function emailText(): string {
     const wrong =
-      result.wrong
-        .map((q) => `  Q${QUIZ.indexOf(q) + 1} (${q.cat}): ${q.q}`)
-        .join("\n") || "  None";
+      result.wrong.map((q) => `  Q${QUIZ.indexOf(q) + 1} (${q.cat}): ${q.q}`).join("\n") ||
+      "  None";
     const date = new Date().toISOString().slice(0, 10);
     return [
       "To: security@meeco.me",
@@ -2476,9 +2409,7 @@ const Assessment: React.FC = () => {
             marginBottom: 24,
           }}
         >
-          <div style={{ fontWeight: 600, fontSize: 16, marginBottom: 6 }}>
-            Before you begin
-          </div>
+          <div style={{ fontWeight: 600, fontSize: 16, marginBottom: 6 }}>Before you begin</div>
           <div
             style={{
               color: C.mut,
@@ -2487,10 +2418,10 @@ const Assessment: React.FC = () => {
               marginBottom: 16,
             }}
           >
-            30 questions · ~30 minutes · pass mark 80%. The 25 multiple-choice
-            and scenario questions are auto-scored; the 5 short-answer questions
-            are self-reviewed against model answers and flagged for ISMS review.
-            Your result generates an email summary for the ISMS team.
+            30 questions · ~30 minutes · pass mark 80%. The 25 multiple-choice and scenario
+            questions are auto-scored; the 5 short-answer questions are self-reviewed against model
+            answers and flagged for ISMS review. Your result generates an email summary for the ISMS
+            team.
           </div>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             <input
@@ -2724,9 +2655,8 @@ const Assessment: React.FC = () => {
             marginBottom: 16,
           }}
         >
-          This generates the standard result email for the ISMS team — evidence
-          for the ISO 27001 audit. Send it via your mail client, or
-          copy/download the record.
+          This generates the standard result email for the ISMS team — evidence for the ISO 27001
+          audit. Send it via your mail client, or copy/download the record.
         </div>
         <div
           style={{
@@ -2838,11 +2768,10 @@ const Assessment: React.FC = () => {
             FOR ADMINISTRATORS — ELECTRONIC COLLECTION
           </div>
           <div style={{ color: C.mut, fontSize: 12.5, lineHeight: 1.6 }}>
-            To automate collection, replace the mail step with a POST to a form
-            endpoint (e.g. an internal LMS, Microsoft Forms, or a serverless
-            webhook) capturing: full name, email, department, completion date,
-            score, and pass/fail. Route submissions to security@meeco.me
-            or an ISMS dashboard. Retain records as ISO 27001 training evidence.
+            To automate collection, replace the mail step with a POST to a form endpoint (e.g. an
+            internal LMS, Microsoft Forms, or a serverless webhook) capturing: full name, email,
+            department, completion date, score, and pass/fail. Route submissions to
+            security@meeco.me or an ISMS dashboard. Retain records as ISO 27001 training evidence.
           </div>
         </div>
       </div>
@@ -3025,9 +2954,7 @@ const TrainingSDLC: React.FC = () => {
       </aside>
 
       <main style={{ flex: 1, overflowY: "auto", height: "100vh" }}>
-        <div
-          style={{ maxWidth: 920, margin: "0 auto", padding: "48px 56px 96px" }}
-        >
+        <div style={{ maxWidth: 920, margin: "0 auto", padding: "48px 56px 96px" }}>
           <div style={{ marginBottom: 32 }}>
             <div
               style={{
@@ -3071,11 +2998,9 @@ const TrainingSDLC: React.FC = () => {
           {view === "m3" && <Module3 />}
           {view === "m4" && <Module4 />}
           {view === "m5" && <Module5 />}
-          {(view === "m1" ||
-            view === "m2" ||
-            view === "m3" ||
-            view === "m4" ||
-            view === "m5") && <ModuleInteractive view={view} />}
+          {(view === "m1" || view === "m2" || view === "m3" || view === "m4" || view === "m5") && (
+            <ModuleInteractive view={view} />
+          )}
           {view === "quiz" && <Assessment />}
 
           {showFooter && (
@@ -3118,9 +3043,7 @@ const TrainingSDLC: React.FC = () => {
                   fontFamily: "inherit",
                 }}
               >
-                {next
-                  ? `${next === "quiz" ? "Start assessment" : nLabels[next]} →`
-                  : ""}
+                {next ? `${next === "quiz" ? "Start assessment" : nLabels[next]} →` : ""}
               </button>
             </div>
           )}
