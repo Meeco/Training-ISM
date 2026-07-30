@@ -130,16 +130,17 @@ const cols = (
 const ban = (text: string): Block => ({ isBanner: true, text });
 
 const DEPT_OPTIONS = [
-  "Board / Director",
-  "Executive",
-  "Senior Management",
-  "Project Management",
-  "Finance",
-  "Product Development",
-  "Product Design",
   "Administration",
-  "Human Resources",
+  "Board / Director",
   "Customer-Facing / Sales",
+  "Executive",
+  "Finance",
+  "Human Resources",
+  "Product Design",
+  "Product Development",
+  "Project Management",
+  "Senior Management",
+  "Support / Customer Success",
   "Other",
 ];
 
