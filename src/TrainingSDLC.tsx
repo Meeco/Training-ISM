@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import meecoLogo from "./assets/images/meeco-logo.svg";
 
 /* ---------- Types ---------- */
 type ViewId = "welcome" | "m1" | "m2" | "m3" | "m4" | "m5" | "quiz";
@@ -2839,6 +2840,11 @@ const TrainingSDLC: React.FC = () => {
             borderBottom: "1px solid #282326",
           }}
         >
+          <img
+            src={meecoLogo}
+            alt="Meeco"
+            style={{ height: 32, width: "auto", display: "block", marginBottom: 16 }}
+          />
           <div
             style={{
               fontFamily: MONO,

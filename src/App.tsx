@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import TrainingAwareness from "./TrainingAwareness";
 import TrainingSDLC from "./TrainingSDLC";
+import meecoLogo from "./assets/images/meeco-logo.svg";
 import "./App.css";
 
 type TrainingView = "home" | "awareness" | "sdlc";
@@ -50,6 +51,7 @@ function App(): React.JSX.Element {
   return (
     <main className="training-home">
       <section className="training-selector" aria-labelledby="training-title">
+        <img className="training-logo" src={meecoLogo} alt="Meeco" />
         <p className="training-eyebrow">Meeco learning portal</p>
         <h1 id="training-title">Information Security Training</h1>
         <p className="training-intro">Choose the training program that best matches your role.</p>
