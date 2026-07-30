@@ -34,5 +34,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm run deploy -- \
-            -u "github-actions[bot] <github-actions[bot]@users.noreply.github.com>" \
+            -u "GitHub Actions <github-actions@users.noreply.github.com>" \
             -r "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+
