@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Training-ISM/static/css/main.0baf445a.css",
-    "main.js": "/Training-ISM/static/js/main.160f89fa.js",
+    "main.js": "/Training-ISM/static/js/main.e5e77ce6.js",
     "static/media/meeco-logo.svg": "/Training-ISM/static/media/meeco-logo.cb55be9434653044a0a6f3f0cb56ba09.svg",
     "index.html": "/Training-ISM/index.html",
     "main.0baf445a.css.map": "/Training-ISM/static/css/main.0baf445a.css.map",
-    "main.160f89fa.js.map": "/Training-ISM/static/js/main.160f89fa.js.map"
+    "main.e5e77ce6.js.map": "/Training-ISM/static/js/main.e5e77ce6.js.map"
   },
   "entrypoints": [
     "static/css/main.0baf445a.css",
-    "static/js/main.160f89fa.js"
+    "static/js/main.e5e77ce6.js"
   ]
 }
