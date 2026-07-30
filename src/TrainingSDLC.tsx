@@ -617,7 +617,7 @@ const QUIZ: Question[] = [
     type: "short",
     cat: "AI Governance",
     lo: "State the rules for AI + customer data.",
-    q: "What are the rules for using customer data with AI tools at [Company]?",
+    q: "What are the rules for using customer data with AI tools at Meeco?",
     model:
       "Use approved/enterprise AI systems only. Never paste customer/personal data, confidential information, secrets, or proprietary source code into unapproved or public tools. Anonymise or strip sensitive data before using any AI tool, respect data classification, and report any accidental exposure to ISMS.",
   },
@@ -1607,7 +1607,7 @@ const Module3: React.FC = () => (
       >
         Any information about an identified individual, or one who is reasonably
         identifiable — names, emails, IPs, device IDs, location, and
-        combinations that re-identify someone. [Company] is Australian-based and
+        combinations that re-identify someone. Meeco is Australian-based and
         processes personal information of customers, users, employees and
         partners globally.
       </p>
@@ -2920,7 +2920,7 @@ const TrainingSDLC: React.FC = () => {
               marginBottom: 8,
             }}
           >
-            [Company] · ISMS
+            Meeco · ISMS
           </div>
           <div style={{ fontSize: 16, fontWeight: 600, lineHeight: 1.3 }}>
             Software Development Security Essentials
