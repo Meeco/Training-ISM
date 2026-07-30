@@ -83,7 +83,7 @@ const cal = (t: "good" | "warn" | "bad" | "info", title: string, text: string): 
 const cols = (lt: string, la: string, lm: string, l: string[], rt: string, ra: string, rm: string, r: string[]): Block => ({ isColumns: true, leftTitle: lt, leftAccent: la, leftMark: lm, left: l, rightTitle: rt, rightAccent: ra, rightMark: rm, right: r });
 const ban = (text: string): Block => ({ isBanner: true, text });
 
-const DEPT_OPTIONS = ["Board / Director", "Executive", "Senior Management", "Project Management", "Finance", "Administration", "Human Resources", "Customer-Facing / Sales", "General Staff"];
+const DEPT_OPTIONS = ["Board / Director", "Executive", "Senior Management", "Project Management", "Finance", "Product Development", "Product Design", "Administration", "Human Resources", "Customer-Facing / Sales", "Other"];
 
 const OBJECTIVES = [
   "Recognise your information security responsibilities",
