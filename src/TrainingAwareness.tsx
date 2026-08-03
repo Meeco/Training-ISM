@@ -838,13 +838,13 @@ function buildQuestions(): FinalQuestion[] {
     {
       section: "Information Handling",
       prompt: "A document contains customer account records. How should it be classified?",
-      correct: "c",
+      correct: "d",
       explain:
         "Customer records are among our most sensitive data and must be classified Restricted — the highest level of protection.",
       options: [
         { key: "a", text: "Public" },
         { key: "b", text: "Internal" },
-        { key: "c", text: "Confidential and/or Restricted" },
+        { key: "c", text: "Confidential" },
         { key: "d", text: "Restricted" },
       ],
     },
