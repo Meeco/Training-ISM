@@ -4,9 +4,9 @@
   "private": true,
   "homepage": "https://meeco.github.io/Training-ISM/",
   "dependencies": {
-    "@testing-library/dom": "^10.4.1",
+    "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.2",
+    "@testing-library/react": "^16.3.3",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-scripts": "5.0.1"
@@ -47,7 +47,16 @@
     "@types/react-dom": "^19.2.3",
     "eslint-config-prettier": "10.1.8",
     "gh-pages": "^6.3.0",
-    "prettier": "3.9.6",
+    "prettier": "3.9.8",
     "typescript": "^4.9.5"
+  },
+  "overrides": {
+    "nth-check": "3.0.1",
+    "postcss": "8.5.28",
+    "serialize-javascript": "7.1.1",
+    "uuid": "14.0.2",
+    "@tootallnate/once": "3.0.1",
+    "underscore": "1.13.8",
+    "svgo": "2.8.4"
   }
 }
