@@ -55,7 +55,7 @@
   "overrides": {
     "nth-check": "3.0.1",
     "postcss": "8.5.28",
-    "serialize-javascript": "7.1.2",
+    "serialize-javascript": "7.1.4",
     "uuid": "14.0.2",
     "@tootallnate/once": "3.0.1",
     "underscore": "1.13.8",
